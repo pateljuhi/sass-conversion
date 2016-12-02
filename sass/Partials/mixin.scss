@@ -1,0 +1,28 @@
+    @mixin tablet {
+        @media all and (min-width: 701px) and (max-width: 900px) {
+            @content;
+        }
+    }
+    
+    @mixin desktop {
+        @media all and (min-width: 901px) and (max-width: 1400px) {
+            @content;
+        }
+    }
+    
+    @mixin large {
+        @media all and (min-width: 1401px) {
+            @content;
+        }
+    }
+    
+    @mixin calc-column-width($n, $w, $s) {
+        // $w -total width of the row
+        // $n - number of column
+        // $s - value of spacing
+        width: ($w - $s*($n - 1))/$n;
+        margin: 0 0 0 $s;
+        &:first-child {
+            margin: 0;
+        }
+    }
